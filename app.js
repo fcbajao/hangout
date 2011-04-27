@@ -30,13 +30,21 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Express'
+    title: 'Hangout'
   });
 });
+
+// NOWJS STUFF
+var chatserver = require('./chatserver');
+
+app.startListen = function(port) {
+  this.listen(port);
+  chatserver.init(this);
+  console.log("Express server listening on port %d", app.address().port);
+};
 
 // Only listen on $ node app.js
 
 if (!module.parent) {
-  app.listen(3000);
-  console.log("Express server listening on port %d", app.address().port);
+  app.startListen(3000);
 }

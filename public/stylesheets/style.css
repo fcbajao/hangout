@@ -1,8 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#chatbox {
+  height: 400px;
+  overflow: auto;
+  background: #ececec;
+  margin: 20px 0 20px;
+}
+p {
+  padding: 10px;
+}
+p span {
+  font-weight: bold;
+}
+p.system {
+  color: #848383;
+}
+
+#message-wrapper {
+  padding: 5px;
+  border: 1px solid #000;
+}
+#message {
+  width: 100%;
+  border: 0;
+  outline:none;
 }
